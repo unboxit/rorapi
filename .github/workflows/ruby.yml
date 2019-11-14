@@ -1,6 +1,13 @@
 name: Ruby
 
-on: [push]
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
 
 jobs:
   build:
@@ -10,7 +17,13 @@ jobs:
     - name: Set up Ruby 2.5.3
       uses: actions/setup-ruby@v1
       with:
-        ruby-version: 2.5.3
+        ruby-version: 2.5.x
+    - name: Cache
+      uses: actions/cache@v1.0.0
+    - name: Rubocop checks
+      uses: gimenete/rubocop-action@1.0
+    - name: Pronto Ruby
+      uses: AdWerx/pronto-ruby@v1.0.0-rc3
     - name: Build and test with RSpec
       run: |
         gem update --system
