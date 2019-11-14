@@ -18,8 +18,6 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.5.x
-    - name: Rubocop checks
-      uses: gimenete/rubocop-action@1.0
     - name: Pronto Ruby
       uses: AdWerx/pronto-ruby@v1.0.0-rc3
     - name: Build and test with RSpec
