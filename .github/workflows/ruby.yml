@@ -18,8 +18,6 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 2.5.x
-    - name: Pronto Ruby
-      uses: AdWerx/pronto-ruby@v1.0.0-rc3
     - name: Build and test with RSpec
       run: |
         gem update --system
